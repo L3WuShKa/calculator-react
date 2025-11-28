@@ -21,13 +21,19 @@ html, body { height: 100%; margin: 0; font-family: "Inter", system-ui, -apple-sy
 /* gradient pt dark mode */
 .app.dark {
   --bg-grad: linear-gradient(135deg,
-    #0f2027 0%, #203a43 50%, #2c5364 100%);
-  --text: #eaf4ff;
-  --btn-base: rgba(255,255,255,0.08);
-  --btn-hover: rgba(255,255,255,0.18);
-  --operator-tint: rgba(0,255,200,0.18);
+    #071018 0%, #15323a 50%, #278099 100%);
+  --text: #e6f7ff;
+  --btn-base: rgba(255,255,255,0.06);
+  --btn-hover: rgba(255,255,255,0.22);
+  --operator-tint: rgba(0,255,200,0.14);
   --operator-color: #00ffc3;
+  --operator-color-light: #66ffe0;
+  --operator-color-dark: #009f7a;
+  /*pt back / clr*/
   --action-tint: rgba(255,60,120,0.22);
+  --action-color: #ff6464;
+  --action-color-light: #ff8aa8;
+  --action-color-dark: #ff3b6b;
 }
 
 /* backgrnd */
@@ -37,14 +43,15 @@ html, body { height: 100%; margin: 0; font-family: "Inter", system-ui, -apple-sy
   align-items: center;
   justify-content: center;
   background: var(--bg-grad);
-  background-size: 400% 400%; /* marit ca sa am destul spatiu pt movementul  gradientului */
-  animation: gradientShift 12s linear infinite; /* sa mearga la infinit*/
+  background-size: 300% 300%;
+  animation: gradientShift 6.5s linear infinite;
   padding: 40px;
 }
- /*animatia pt gradient sa fie continua*/
+
 @keyframes gradientShift {
   0% { background-position: 0% 50%; }
-  100% { background-position: 400% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 /*switch tema*/
@@ -204,6 +211,23 @@ html, body { height: 100%; margin: 0; font-family: "Inter", system-ui, -apple-sy
   background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
   border: 1px solid rgba(255,255,255,0.03);
 }
+
+/* variente mai deschise pt butoane in d mode */
+.app.dark .btn-operator {
+  color: var(--operator-color-light);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.28);
+}
+.app.dark .btn-operator::after {
+  background: linear-gradient(180deg, rgba(0,255,200,0.12), rgba(255,255,255,0));
+}
+
+.app.dark .btn-action {
+  color: var(--action-color-light);
+}
+.app.dark .btn-action::after {
+  background: linear-gradient(180deg, rgba(255,60,120,0.18), rgba(255,255,255,0));
+}
+
 
 /* butoanele de la operatori */
 .btn-operator {
