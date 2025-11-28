@@ -37,15 +37,14 @@ html, body { height: 100%; margin: 0; font-family: "Inter", system-ui, -apple-sy
   align-items: center;
   justify-content: center;
   background: var(--bg-grad);
-  background-size: 300% 300%;
-  animation: gradientShift 6s linear infinite;
+  background-size: 400% 400%; /* marit ca sa am destul spatiu pt movementul  gradientului */
+  animation: gradientShift 12s linear infinite; /* sa mearga la infinit*/
   padding: 40px;
 }
-
+ /*animatia pt gradient sa fie continua*/
 @keyframes gradientShift {
   0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  100% { background-position: 400% 50%; }
 }
 
 /*switch tema*/
